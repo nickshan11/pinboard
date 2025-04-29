@@ -1,0 +1,12 @@
+.note-widget {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 200px;
+  min-height: 100px;
+  background: #fffb91;
+  padding: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: text;
+}
