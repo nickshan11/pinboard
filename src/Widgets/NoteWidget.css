@@ -1,12 +1,61 @@
 .note-widget {
   position: absolute;
-  top: 100px;
-  left: 100px;
   width: 200px;
   min-height: 100px;
   background: #fffb91;
-  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0px;
+  padding-bottom: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  overflow: visible;
+  height: auto;
+}
+
+.note-widget .handle {
+  top: -100px;
+  height: 16px;
+  background: none;
+  cursor: move;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.note-widget .content {
+  display: block;
+  margin-top: 2px; /* handle-height + gap */
+  min-height: 100px;
+  padding: 8px;
+  padding-left: 8px;
+  padding-top: 0px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
   cursor: text;
+  overflow: auto;
+  outline: none;
+}
+
+.note-widget .content:empty:before {
+  content: attr(data-placeholder);
+  color: #aaa;
+  pointer-events: none; /* let clicks go “through” to the div itself */
+}
+
+/* once the user focuses—even before typing—remove the hint */
+.note-widget .content:focus:before {
+  content: "";
+}
+
+.note-widget .close-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
 }

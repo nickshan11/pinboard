@@ -18,10 +18,18 @@ const App: React.FC = () => {
     setMenuOpen(false);
   };
 
+  const removeNote = (id: number) => {
+    setNotes((prev) => prev.filter((n) => n.id !== id));
+  };
+
   return (
     <div className="board">
       {notes.map((note) => (
-        <NoteWidget key={note.id} initialText={note.text} />
+        <NoteWidget
+          key={note.id}
+          initialText={note.text}
+          onClose={() => removeNote(note.id)}
+        />
       ))}
 
       {/* Slide-in menu */}
