@@ -67,3 +67,12 @@
 .menu-icon {
   margin-right: 8px;
 }
+
+.menu-dropdown {
+  position: fixed;
+  /* if you want it in the top-right: */
+  top: 24px;
+  /* if you want it in the bottom-right, uncomment the next line and comment out `top` */
+  right: 24px; /* same “24px” you’re already using for .fab */
+  z-index: 11; /* just above the fab (which is z-index:10 in your CSS) */
+}

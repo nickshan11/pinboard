@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
 import NoteWidget from "./Widgets/NoteWidget.tsx";
 
@@ -44,6 +46,35 @@ const App: React.FC = () => {
       <button className="fab" onClick={toggleMenu}>
         {menuOpen ? "-" : "+"}
       </button>
+
+      {/* Dropdown menu */}
+      <div className="btn-group position-fixed top-0 end-0 mt-4 me-4">
+        <button
+          type="button"
+          className="btn btn-secondary dropdown-toggle"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Right-aligned menu
+        </button>
+        <ul className="dropdown-menu dropdown-menu-end">
+          <li>
+            <a className="dropdown-item" href="#">
+              Menu item
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Menu item
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Menu item
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
